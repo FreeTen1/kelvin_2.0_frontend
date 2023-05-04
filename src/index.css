@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+/* elements */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    min-width: 150px;
+    height: 30px;
+    color: #564D4E;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button:hover {
+    background: #e5e5e5;
+}
+
+.button:active {
+    background: #c9c9c9;
+    transition: none;
+}
+
+.input_text {
+    padding-left: 5px;
+    height: 25px;
+    background: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}
+
+.search_select_datalist {
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    max-height: 136px;
+    margin: 0;
+    box-shadow: 0px 0px 5px black;
+}
+
+.search_select_datalist li {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    min-height: 25px;
+    padding: 3px 5px;
+}
+
+.search_select_datalist li:hover {
+    background-color: lightgrey;
+}
+
+.scrolling::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+}
+
+.scrolling::-webkit-scrollbar-thumb {
+    background: #C4C4C4;
+    box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid rgba(60, 70, 82, 0.2);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+
+/* main */
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 67px 1fr;
+    grid-template-rows: 48px 1fr;
+    transition: .5s;
+    grid-template-areas:
+        "aside header"
+        "aside main"
+    ;
+}
+
+.aside_open {
+    grid-template-columns: 300px 1fr;
+}
+
+header {
+    grid-area: header;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 4px;
+    z-index: 10;
+}
+
+aside {
+    grid-area: aside;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 17px 0;
+    background: #362E2F;
+    color: white;
+}
+
+main {
+    grid-area: main;
+    overflow: hidden;
+    background: #F5F5F5;
+}
+
+/* aside navigation */
+.link {
+    display: flex;
+    width: 300px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 23px;
+    padding-right: 14px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.link:hover {
+    background: rgba(99, 78, 81, 0.733);
+}
+
+/* home page */
+.home-page {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(70px, auto) 0 1fr 60px;
+    transition: .5s;
+    grid-template-areas:
+        "mini-filter"
+        "full-filter"
+        "div-table"
+        "index-footer"
+    ;
+    grid-gap: 5px;
+}
+
+.full-filter-open {
+    grid-template-rows: minmax(70px, auto) 155px 1fr 60px;
+}
+
+.mini-filter {
+    grid-area: mini-filter;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.full-filter {
+    overflow: hidden;
+    grid-area: full-filter;
+}
+
+.div-table {
+    /* background: rgba(255, 0, 0, 0.295); */
+    grid-area: div-table;
+    overflow: hidden;
+}
+
+.index-footer {
+    /* background: rgba(0, 0, 255, 0.377); */
+    grid-area: index-footer;
+}
+
+/* single measure */
+.single-measure {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(70px, auto) 1fr 60px;
+    grid-template-areas:
+        "measure-header"
+        "measure-header"
+        "measure-footer"
+    ;
+    grid-gap: 5px;
+}
